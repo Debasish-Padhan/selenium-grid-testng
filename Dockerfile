@@ -1,6 +1,6 @@
 FROM python:3.10.5-slim-buster
 
-RUN pip install -y selenium
+RUN pip install selenium
 
 COPY . .
 
