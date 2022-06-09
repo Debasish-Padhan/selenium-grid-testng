@@ -5,4 +5,4 @@ steps:
 - name: python3
   id: Test
   entrypoint: python3
-  args: ['']
+  args: ['selenium_python.py']
