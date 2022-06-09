@@ -5,7 +5,7 @@ steps:
 - name: python:3.10.5-slim-buster
   id: Install
   entrypoint: pip
-  args: ['insatll', 'selenium']
+  args: ['install', 'selenium']
 - name: python:3.10.5-slim-buster
   id: Test
   entrypoint: python
