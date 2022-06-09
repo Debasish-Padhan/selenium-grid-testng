@@ -4,4 +4,4 @@ RUN pip install -y selenium
 
 COPY . .
 
-CMD python selenium_python.py
+CMD ["python", "selenium_python.py"]
