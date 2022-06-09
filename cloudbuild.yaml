@@ -2,7 +2,7 @@ steps:
 - name: gcr.io/cloud-builders/docker
   id: Run
   args: ['run', '-d', '-p', '4444:4444', '--name', 'standalone-chrome', 'selenium/standalone-chrome:4.2.1-20220531']
-- name: maven
+- name: python3
   id: Test
-  entrypoint: mvn
-  args: ['clean', '-P', 'chrome,grid,localhost', 'test']
+  entrypoint: python3
+  args: ['']
