@@ -1,8 +1,16 @@
 steps:
 - name: gcr.io/cloud-builders/docker
   id: Build
-  args: 
-- name: python:3.10.5-slim-buster
+  args:
+     - build
+     - '--no-cache'
+     - '-t'
+     - 'gcr.io/$PROJECT_ID/python_script:$COMMIT_SHA'
+     - .
+     - '-f'
+     - Dockerfile
+- name: gcr.io/cloud-builders/docker
   id: Test
-  entrypoint: python
-  args: ['selenium_python.py']
+  args:
+    - run
+    - 'gcr.io/$PROJECT_ID/python_script:$COMMIT_SHA'
