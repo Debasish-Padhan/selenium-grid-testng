@@ -8,7 +8,7 @@ class PythonOrgSearch(unittest.TestCase):
 
 	def setUp(self):
 		self.driver = webdriver.Remote(
-			command_executor = 'http://34.71.185.54:4444/wd/hub',
+			command_executor = 'http://localhost:4444/wd/hub',
 			desired_capabilities = {
 			'browserName': 'chrome',
 			'javascriptEnabled': True
