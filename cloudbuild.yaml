@@ -2,7 +2,11 @@ steps:
 - name: gcr.io/cloud-builders/docker
   id: Run
   args: ['run', '-d', '-p', '4444:4444', '--name', 'standalone-chrome', 'selenium/standalone-chrome:4.2.1-20220531']
-- name: python
+- name: python:3.10.5-slim-buster
+  id: Install
+  entrypoint: pip
+  args: ['insatll', 'selenium']
+- name: python:3.10.5-slim-buster
   id: Test
   entrypoint: python
   args: ['selenium_python.py']
