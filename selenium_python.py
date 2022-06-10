@@ -1,13 +1,16 @@
 import unittest 
 import time
-from selenium import webdriver 
+from os import environ as env
+from dotenv import load_dotenv
+from selenium import webdriver
+load_dotenv()
 
 class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Remote(
 	    command_executor = 'http://selenium-hub:4444',
-	    desired_capabilities = {'browserName': 'chrome','javascriptEnabled': True})
+	    desired_capabilities = {'browserName': env['BROWSER_NAME'],'javascriptEnabled': True})
 
     def open_google(self):
         driver = self.driver
