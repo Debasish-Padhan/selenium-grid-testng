@@ -6,7 +6,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Remote(
-	    command_executor = 'https://standalone-chrome-m554is3h4a-uc.a.run.app',
+	    command_executor = 'http://standalone-chrome:4444',
 	    desired_capabilities = {'browserName': 'chrome','javascriptEnabled': True})
 
     def open_google(self):
