@@ -1,5 +1,8 @@
 steps:
 - name: gcr.io/cloud-builders/docker
+  id: Run
+  args: ['run', '-d', '-p', '4444:4444', '--name', 'standalone-chrome', 'selenium/standalone-chrome:latest']
+- name: gcr.io/cloud-builders/docker
   id: Build
   args:
      - build
@@ -13,4 +16,6 @@ steps:
   id: Test
   args:
     - run
+    - '--link'
+    - 'standalone-chrome:selenium/standalone-chrome'
     - 'gcr.io/$PROJECT_ID/python_script:$COMMIT_SHA'
