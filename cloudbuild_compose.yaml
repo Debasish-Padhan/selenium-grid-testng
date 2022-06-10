@@ -1,4 +1,21 @@
 steps:
 - name: 'docker/compose'
   id: 'compose-up'
-  args: [ '-f', 'docker-compose.yaml', 'up' ]
+  args: [ '-f', 'docker-compose.yaml', 'up', '-d' ]
+- name: gcr.io/cloud-builders/docker
+  id: Build
+  args:
+     - build
+     - '--no-cache'
+     - '-t'
+     - 'gcr.io/$PROJECT_ID/python_script:$COMMIT_SHA'
+     - .
+     - '-f'
+     - Dockerfile
+- name: gcr.io/cloud-builders/docker
+  id: Test
+  args:
+    - run
+    - '--network'
+    - 'cloudbuild'
+    - 'gcr.io/$PROJECT_ID/python_script:$COMMIT_SHA'
