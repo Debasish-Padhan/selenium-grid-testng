@@ -6,6 +6,8 @@ steps:
   id: Build
   args:
      - build
+     - '--build-arg'
+      - 'BROWSER_NAME=$_BROWSER_NAME'
      - '--no-cache'
      - '-t'
      - 'gcr.io/$PROJECT_ID/python_script:$COMMIT_SHA'
