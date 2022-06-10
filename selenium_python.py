@@ -6,7 +6,7 @@ class PythonOrgSearch(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Remote(
-	    command_executor = 'http://standalone-chrome:4444',
+	    command_executor = 'http://selenium-hub:4444',
 	    desired_capabilities = {'browserName': 'chrome','javascriptEnabled': True})
 
     def open_google(self):
@@ -59,7 +59,7 @@ class PythonOrgSearch(unittest.TestCase):
         driver.get("https://tatacliq.com")
         time.sleep(10)
 
-    def test_create_delete_repository(self):
+    def test_website(self):
         self.open_google()
         self.open_flipkart()
         self.open_amazon()
