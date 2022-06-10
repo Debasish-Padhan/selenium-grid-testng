@@ -1,7 +1,7 @@
 steps:
 - name: gcr.io/cloud-builders/docker
   id: Run
-  args: ['run', '-d', '-p', '4444:4444', '--name', 'standalone-chrome', '-shm-size=2g' 'selenium/standalone-chrome:latest']
+  args: ['run', '-d', '-p', '4444:4444', '--name', 'standalone-chrome', '--shm-size=2g', 'selenium/standalone-chrome:latest']
 - name: gcr.io/cloud-builders/docker
   id: Build
   args:
