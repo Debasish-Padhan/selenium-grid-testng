@@ -16,6 +16,4 @@ steps:
   id: Test
   args:
     - run
-    - '--link'
-    - 'standalone-chrome:selenium/standalone-chrome'
     - 'gcr.io/$PROJECT_ID/python_script:$COMMIT_SHA'
