@@ -21,3 +21,7 @@ steps:
     - '--network'
     - 'cloudbuild'
     - 'gcr.io/$PROJECT_ID/python_script:$COMMIT_SHA'
+artifacts:
+  objects:
+    location: 'gs://python_build-report'
+    paths: ['selenium_python.py']
