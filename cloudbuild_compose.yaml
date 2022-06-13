@@ -23,5 +23,5 @@ steps:
     - 'gcr.io/$PROJECT_ID/python_script:$COMMIT_SHA'
 artifacts:
   objects:
-    location: 'gs://python_build-report'
+    location: 'gs://python_build-report/$BUILD_ID'
     paths: ['selenium_python.py']
